@@ -1,0 +1,451 @@
+.wrapper.top-nav {
+  display: none;
+  color: #757576;
+  @media screen and (min-width: $small) {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding: .75rem 0;
+    font-size: 1.2rem;
+    color: #757576;
+    .meta {
+      display: none;
+    }
+    @media screen and (min-width: $medium) {
+      padding: 1rem 1rem;
+      .meta {
+        display: inline;
+      }
+    }
+    a {
+      color: #757576;
+      margin: 0 1rem;
+      border-bottom: 1px solid #757575;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      &:hover {
+        color: black;
+        border-bottom: 0;
+        text-decoration: none;
+      }
+      &+a {
+        margin: 0 1rem 0 0;
+      }
+    }
+    @media screen and (min-width: $large) {
+      font-size: 1.4rem;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+    @media screen and (min-width: $ultra) {
+      padding: .5rem 0;
+    }
+  }
+}
+
+.o-navbar {
+  background: black;
+  background-image: linear-gradient(to left, var(--black), #000000);
+  z-index: 50;
+  transition: transform .15s ease-in-out;
+  position: sticky;
+  top: 0;
+  .container {
+    @media screen and (max-width: $small - 1) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    }
+  }
+  @media screen and (min-width: $medium) {
+    height: 15rem;
+    #nav-checkbox, #nav-checkbox-label, #background {
+      display: none;
+    }
+    .consultation {
+      border-top-right-radius: 15px;
+    }
+    @media screen and (min-width: $large) {
+      overflow:hidden;
+      height: 7.5rem;
+    }
+  }  
+}
+
+.o-navbar__metaPhone {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-content: flex-start;
+}
+
+#o-navbar__phone {
+  display: none;
+  width: 4rem;
+  height: 4rem;
+  margin-top: 1.75rem;
+  margin-right: 1rem;
+  background: var(--secondary-color) url('../images/icons/phone-receiver.svg') center center no-repeat;
+  background-size: 50% 50%;
+  border-radius: .7rem;
+  align-self: flex-end;
+  text-indent: -9999rem;
+  @media screen and (max-width: $small - 1) {
+    display: block;
+  }
+}
+
+.o-navbar__metaInfo {
+  display: none;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  margin: 3rem 2rem 0 0;
+  float: right;
+  max-width: calc(100% - 22rem);
+  text-align: right;
+  color: #AAAAAA;
+  @media screen and (min-width: $medium) {
+    float: right;
+  }
+  a {
+    color: #AAAAAA;
+    text-decoration: underline;
+    &:hover {
+      color: #FFFFFF;
+    }
+  }
+  .metaInfo__phoneNumber {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    display: inline;
+    border-bottom: 2px solid var(--primary-color);
+    margin-left: 2rem;
+    text-decoration: none;
+    @media screen and (min-width: $medium) {
+      float: left;
+    }
+  }
+  .metaInfo__address {
+    display: block;
+    margin: 1rem 0 0 0;
+    @media screen and (min-width: $small) {
+      display: none;
+      float: left;
+    }
+  }
+  @media screen and (min-width: $tiny) and (max-width: $medium) {
+    display: inline;
+  }
+}
+
+.o-navbar__logo {
+  float: left;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  align-self: start;
+  &--icon {
+    @media screen and (max-width: 320px) {
+      display: none;
+    }
+    float: left;
+    height: 7.5rem;
+    width: 7.5rem;
+    background: var(--primary-color);
+    text-align: center;
+    padding-top: 1rem;
+    float: left;
+    img {
+      width: 75%;
+      height: auto;
+    }
+  }
+  &--text {
+    float: left;
+    padding: 2rem 0rem 1rem 1.7rem; 
+    -webkit-transition: background-color .15s ease-in-out; 
+    transition: background-color .15s ease-in-out;    
+    img {
+      width: 10rem;
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (min-width: $wide) {
+    width: 24rem;
+  }
+} 
+
+.m-navToggle {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  height: 0;
+  background: $black-gradient;
+  position: absolute;
+  z-index: 20;
+  top: 7.5rem;
+  @media screen and (min-width: $small) {
+    position: relative;
+    top:0;
+    height: 7.5rem;
+    box-shadow: $card-shadow;
+    -webkit-box-shadow: $card-shadow;
+    @media screen and (min-width: $medium) {
+      background: $black-gradient;
+    }
+    @media screen and (min-width: $large) {
+      top: 0;
+      float: right;
+      width: auto;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      background: transparent;
+    }
+  }
+}
+
+.m-navList {
+  padding: 0px;
+  list-style: none;
+  width: 100%;
+  
+  @media screen and (max-width: $small - 1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  overflow: hidden;
+  margin: 0;
+  &__item {
+    display: block;
+    width: 100%;
+    text-align: center;
+    &.--active a {
+      color: white;
+      @media screen and (max-width: $medium) {
+        font-weight: bold;
+      }
+    }
+    &.--active a:before {
+      background: #FFFFFF;
+    }
+  }
+  &__link {
+    color: #cccccc;
+    text-decoration: none;
+    padding: 2rem 0;
+    display: block;
+    font-family: chivo;
+    font-size: 2rem;
+    @media screen and (min-width: $small) {
+      @include fluid-type($small, $large, 14px, 16px);
+    }
+    &:hover {
+      background: rgba(255,255,255,.02);
+      color: white;
+    }
+  }
+  
+  @media screen and (min-width: $tiny) {   
+    height: 7.5rem;
+    display: flex;
+    flex-basis: auto;
+    justify-content: flex-start;
+    &__item {
+      width: auto;
+      display: inline;
+      &.--active a {
+        color: white;
+        -webkit-box-shadow: inset 0 -5px 0px var(--primary-color);
+        box-shadow: inset 0 -5px 0px var(--primary-color);
+      }
+      &.--active a:before {
+        background: #FFFFFF;
+      }
+    }
+    &__link {
+      padding: 2.7rem 2rem;
+      height: 7.5rem;
+    }
+    @media screen and (min-width: $medium) {
+      &__link {
+        padding: 2.7rem 2rem;
+      } 
+    }
+    @media screen and (min-width: $large) {
+      float: right;
+      width: auto;
+      margin-top: 0px;
+      background: transparent;
+      &__link {
+        height: 7.5rem;
+        padding: 2.7rem 2rem;
+        font-size: 1.6rem;
+      }
+      &__link.home {
+        display: inline;
+      }
+    } // media query desktop
+  } // media query mobile
+}
+
+.m-navList__item {
+  a:before {
+    content: '';
+    background: #CCCCCC;
+    height: 1.2rem;
+    width: 1.2rem;
+    display: inline-block;
+    margin-right: .75rem;
+    margin-bottom: 0;
+    transition: background-color .25s ease-in-out;
+    &:hover:before {
+      background: #FFFFFF;
+    }
+    @media screen and (min-width: $small) and (max-width: $medium) {
+      display: none;
+    }
+  }
+  &.home a:before {
+    -webkit-mask-image: url('../images/icons/home.svg');
+    mask-image: url('../images/icons/home.svg');
+  }
+  &.memberships a:before {
+    -webkit-mask-image: url('../images/icons/badge.svg');
+    mask-image: url('../images/icons/badge.svg');
+  }
+  &.schedule a:before {
+    -webkit-mask-image: url('../images/icons/calendar.svg');
+    mask-image: url('../images/icons/calendar.svg');
+  }
+  &.about a:before {
+    -webkit-mask-image: url('../images/icons/user-group.svg');
+    mask-image: url('../images/icons/user-group.svg');
+  }
+  &.resources a:before {
+    -webkit-mask-image: url('../images/icons/education.svg');
+    mask-image: url('../images/icons/education.svg');
+  }
+  &.contact a:before {
+    -webkit-mask-image: url('../images/icons/envelope.svg');
+    mask-image: url('../images/icons/envelope.svg');
+  }
+}
+.m-navToggle__mobileMeta {
+  background: var(--primary-color-dark);
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  @media screen and (min-width: $small) {
+    display: none;
+  }
+}
+
+.m-navToggle__address {
+  display: block;
+  width: 100%;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  margin: 1rem 0;
+  text-align: center;
+  &:after {
+    display: block;
+    content: ' Backside door on left of building | 5th Floor';
+  }
+}
+.m-navToggle__phoneNumber {
+  display: block;
+  width: 100%;
+  background: var(--primary-color-dark);
+  margin: 1rem 0;
+  text-align: center;
+  &:before {
+    content: 'Call Us: ';
+    color: #FFFFFF;
+  }
+}
+
+#o-navbar__toggleLabel {
+  float: right;
+  text-align: center;
+  background: $tertiary-gradient;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  width: 6rem;
+  height: 5.7rem;
+  margin: .75rem .75rem 0 0;
+  padding: 1.5rem;
+  z-index: 20;
+  font-size: .8em;
+  color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 .3rem 0 var(--primary-color);
+  text-indent: -9999rem;
+  &:after {
+    content: '';
+    display: block;
+    background: url('../images/icons/hamburgermenu.svg') center center no-repeat;
+    background-size: 30%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 21;
+  }
+  @media screen and (min-width: $tiny) {
+    display: none;
+  }
+}
+
+#icon-menu {
+  fill: white;
+}
+
+#o-navbar__toggle {
+  visibility: hidden;
+  display: none;
+  width: 0%;
+  &:checked {
+    display: none;
+    & ~ .m-navToggle {
+      position: fixed;
+      height: 100%;
+    }
+    & ~ #o-navbar__toggleLabel {
+      background: var(--primary-color);
+      font-size: 0em;
+      color: var(--primary-color);
+      box-shadow: 0 -.3rem 0 var(--primary-color);
+      margin-top: 1rem;
+      &:before, &:after {
+        content: " ";
+        background-color: white;
+        height: .3rem;
+        border-radius: 1rem;
+        width: 2rem;
+        display: block;
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.0);
+            box-shadow: 1px 1px 1px rgba(0,0,0,.0);
+      }
+      &:before {-webkit-transform: translate(-50%, -50%) rotate(45deg);transform: translate(-50%, -50%) rotate(45deg);}
+      &:after {-webkit-transform: translate(-50%, -50%) rotate(-45deg);transform: translate(-50%, -50%) rotate(-45deg);}
+    }
+  }
+  @media screen and (min-width: $medium) {
+    display: none;
+  }
+}

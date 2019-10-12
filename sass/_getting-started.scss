@@ -1,0 +1,145 @@
+@import "critical";
+
+.introForm {
+  font-family:  $font-stack !important;
+  color: #333333 !important;
+  background: rgba(255,255,255,.75);
+  padding: 2rem !important;
+  border-radius: var(--border-radius) !important;
+  margin-bottom: 3rem;
+  font-weight: bold;
+  font-size: 2rem !important;
+  box-shadow: 0 .2rem 1rem rgba(0,0,0,.2);
+  *:not([type="submit"]) {
+    color: #333333 !important;
+  }
+  @media screen and (min-width: $medium) {
+    position: sticky;
+    top: 2rem;
+  }
+  .cognito .c-label label,
+  .cognito legend {
+    font-size: 2rem !important;
+  }
+}
+
+.cognito {
+  .c-forms-confirmation-message img {
+    width: auto !important;
+    max-width: unset !important;
+    height: auto !important;
+  }
+  .c-label {
+    padding: 0 0 1rem 0 !important;
+    &:after {
+      
+    }
+  }
+  .c-editor {
+    padding: 0 !important;
+  }
+}
+
+.contact .c-span-12:not(:last-of-type) {
+  margin-right: 1rem !important;
+  width: calc(50% - 1rem) !important;
+}
+
+.introForm button,.cognito button {
+  margin-bottom: 0;
+}
+
+.introForm__fieldset,.cognito .c-field {
+  display: block;
+  margin-right: 0;
+  border: 0;
+  padding: 0 !important;
+  margin: 0 0 2rem 0;
+}
+
+.introForm__fieldset label {
+  padding: 0 ;
+  line-height: 1.7rem ;
+  display: none;
+}
+
+.introForm__fieldset input,
+.introForm__fieldset select {
+  font-family: $font-stack;
+  background: #EEEEEE;
+  border: .1rem solid #AAAAAA;
+  padding: 1rem;
+  color: var(--grey);
+  font-size: 1.7rem;
+  width: 100%;
+  margin: .5rem 0 0 0;
+  box-shadow: inset .1rem .1rem .5rem rgba(0,0,0,.2);
+  transition: background-color .15s ease-in-out;
+  &:focus {
+    background: #FFFFFF;
+  }
+}
+
+
+.radio-option, .c-choice-option {
+  display: block;
+  margin-top: 1rem !important;
+  position: relative;
+  span {
+    display: inline !important;
+    font-style: normal;
+    position: relative;
+    padding: .5rem .5rem .5rem 3rem !important; 
+    font-size: 1.7rem !important;
+    font-weight: normal;
+    cursor: pointer;
+    input[type="radio"] {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      background: #EEEEEE;
+      border: 1px solid var(--primary-color);
+      box-shadow: inset .1rem .1rem .5rem rgba(0,0,0,.3);
+      border-radius: .5rem;
+      position: absolute;
+      left: 0;
+      top: .5rem;
+      transition: all .15s ease-in-out;
+    }
+    &:active {
+      &:before {
+        transform: scale(.9);
+      }
+    }
+  }
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.c-choice-option label {
+  padding: 0 !important;
+}
+
+
+.introForm__fieldset input[type="radio"],
+.cognito input[type="radio"] {
+  display: inline-block;
+  float: left;
+  width: calc(100%);
+  height: 4rem;
+
+  position: relative;
+  cursor: pointer;
+  &:checked  ~ label, &:checked ~ span{
+    &:before {
+      background: var(--secondary-color) !important;
+      border: 1px solid var(--secondary-color-dark) !important;
+    }
+  }
+}
+
+
+

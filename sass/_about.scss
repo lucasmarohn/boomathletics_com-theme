@@ -1,0 +1,78 @@
+.o-hero.--about {
+  .hero-bg {
+   // background-image: url('../images/photos/about-hero.jpg');
+    background-image: url('../images/GettyImages-609076630.jpg');
+    background-color: #8ba4a8;
+    background-position: center bottom;
+    background-size: cover;
+  }
+}
+
+
+.a-card.--coach {
+  margin-bottom: 3rem;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+  .img-container { 
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    justify-self: stretch;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom:0;
+  }
+  .a-card__title {
+    background: #1e1e1e;
+    color: white;
+    padding: 2rem;
+    margin: 0;
+  }
+  .a-card__desc {
+    padding: 2rem;
+  }
+  @media screen and (min-width: 650px) {
+    height: auto;
+    flex-direction: row;
+    .img-container {
+      flex-basis: 50%;
+    }
+    .a-card__copy {
+      flex-basis: 100%;
+    }
+    img {
+      height: auto;
+      display: none;
+      float: left;
+      margin-bottom: 0;
+    }
+    .a-card__title {
+      color: #FFFFFF;
+      margin: 0;
+      padding: 2rem;
+      float: right;
+      width: 100%;
+      position: relative;
+      z-index: 10;
+    }
+    .a-card__desc {
+      padding-left: 2rem;
+      float: right;
+      display: block;
+    }
+  }
+}
+
+.a-card.--headcoach {
+  .a-card__title {
+    background-color: var(--primary-color);
+  }
+}

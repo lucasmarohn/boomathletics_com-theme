@@ -1,0 +1,67 @@
+.o-hero {
+  &__title {
+    &.--home {
+      padding: 3rem 0 0 0;
+      margin: 0;
+      @media screen and (min-width: $small) and (max-width: $ultra) {
+        padding: 6rem 0 0 0;
+      }
+      @media screen and (min-width: $ultra) {
+        padding: 8rem 0 0 0;
+      }
+    }
+  }
+  &__ctaBtn {
+    &.--home {
+      font-size: .5em;
+      padding: 1rem 2rem;
+      position: relative;
+      z-index: 5;
+      margin-top: calc( 1*(1rem + 2vw) ); 
+      @include fluid-type($tiny, $large, 14px, 24px);
+      @media screen and (min-width: $medium) {
+        padding: 2rem 3rem;
+      }
+      @media screen and (min-width: $large) {
+        padding: 3rem 5rem;
+      }
+    }
+  }
+  .hero-bg {
+    background-color: #04070c;
+    background-image: url('../images/photos/home-hero.jpg');
+    background-position: center top;
+    background-size: cover;
+  }
+}
+
+
+.review-cta {
+  font-size: 1.8rem;
+  margin-left: 1rem;
+  &:after {
+    content: '\02192';
+    display: inline-block;
+    margin-left: .5rem;
+    transition: transform .15s ease-in-out;
+  }
+  &:hover {
+    &:after {
+      transform: translateX(.5rem);
+    }
+  }
+}
+
+.highlight {
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+  box-shadow: none;
+  .hero-bg {
+    z-index: -1;
+    background-color: #04070c;
+    background: $black-gradient;
+    background-position: center top;
+    background-size: cover;
+  }
+}
